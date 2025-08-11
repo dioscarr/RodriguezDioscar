@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -21,24 +21,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build site
+        run: npm run build
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # For a plain static site with index.html at the repo root, you can upload the root.
-      # If you have a build step (e.g., npm ci && npm run build), replace this step with your build and set the correct path below.
-      - name: Prepare static site
-        run: |
-          echo "Preparing static site for upload"
-          # If you have a build output (e.g., dist, build, out), ensure it exists and set that path in the next step.
+      # SPA fallback so deep links work on Pages (optional, safe even without routing)
+      - name: Create 404 fallback
+        run: cp dist/index.html dist/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # For a simple static site at repo root:
-          path: "."
-
-          # If using a build:
-          # path: "dist"   # or "build" / "out" depending on your tool
+          path: "dist"
 
   deploy:
     needs: build
