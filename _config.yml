@@ -1,0 +1,31 @@
+# GitHub Pages configuration for Dioscar Rodriguez Portfolio
+title: "Dioscar Rodriguez - Software Engineer"
+description: "Professional portfolio and resume of Dioscar Rodriguez, Software Engineer"
+author: "Dioscar Rodriguez"
+email: "dioscarr@gmail.com"
+github_username: dioscarr
+
+# Use the default GitHub Pages theme for clean, professional appearance
+theme: minima
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - .gitignore
+
+# Set the homepage to use index.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"

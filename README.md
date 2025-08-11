@@ -1,3 +1,9 @@
+# How to Access This Page
+
+This portfolio is available as a web page at: **https://dioscarr.github.io/RodriguezDioscar/**
+
+---
+
 **Dioscar Rodriguez**
 
 8322 Lakeshore Rd Cicero, NY 13039 | (347) 200-9415 | dioscarr@gmail.com | <https://github.com/dioscarr>

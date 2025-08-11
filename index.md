@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Dioscar Rodriguez - Software Engineer"
+permalink: /
+---
+
 **Dioscar Rodriguez**
 
 8322 Lakeshore Rd Cicero, NY 13039 | (347) 200-9415 | dioscarr@gmail.com | <https://github.com/dioscarr>
