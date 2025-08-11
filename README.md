@@ -1,3 +1,24 @@
+# How to Access This Page
+
+This portfolio/resume is available as a web page in multiple ways:
+
+## 🌐 Primary Access Method
+**Live Website:** https://dioscarr.github.io/RodriguezDioscar/
+
+The site is automatically deployed via GitHub Pages and should be accessible within a few minutes after any updates.
+
+## 📱 Alternative Access Methods
+- **Direct HTML:** [index.html](index.html) - Standalone HTML version that works in any browser
+- **Markdown:** [index.md](index.md) - Markdown source file for developers/technical viewers
+- **Raw content:** This README file contains the same resume information
+
+## ⚙️ Setup Notes
+- Configured with Jekyll and the Minima theme for professional appearance
+- Optimized for both desktop and mobile viewing
+- Automatically updated when changes are made to the repository
+
+---
+
 **Dioscar Rodriguez**
 
 8322 Lakeshore Rd Cicero, NY 13039 | (347) 200-9415 | dioscarr@gmail.com | <https://github.com/dioscarr>
