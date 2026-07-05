@@ -1,115 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dioscar Rodriguez - Software Engineer</title>
+    <title>Dioscar Rodriguez - AI Systems Architect & Software Engineer</title>
     <style>
+        :root {
+            --bg: #f6f8fb;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #5f6b7a;
+            --blue: #2563eb;
+            --dark: #111827;
+            --border: #dbe3ef;
+            --soft: #eef4ff;
+        }
+        * { box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
+            max-width: 1040px;
             margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
+            padding: 24px;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--bg);
         }
-        h1, h2 { color: #2c3e50; }
-        h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .contact-info { 
-            background: #ecf0f1; 
-            padding: 15px; 
-            border-radius: 5px; 
-            margin: 20px 0;
+        header {
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            color: white;
+            padding: 36px;
+            border-radius: 18px;
+            margin-bottom: 24px;
         }
-        ul { margin-left: 20px; }
-        li { margin-bottom: 8px; }
-        a { color: #3498db; text-decoration: none; }
+        h1, h2, h3 { color: var(--dark); line-height: 1.25; }
+        header h1 { color: white; font-size: 2.35rem; margin: 0 0 8px; }
+        header p { margin: 0; color: #dbeafe; font-size: 1.08rem; }
+        h2 { border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-top: 0; }
+        h3 { margin-bottom: 6px; }
+        a { color: var(--blue); text-decoration: none; font-weight: 600; }
         a:hover { text-decoration: underline; }
-        .section { margin: 30px 0; }
+        .contact-info {
+            background: rgba(255,255,255,.12);
+            padding: 14px 0 0;
+            margin-top: 18px;
+            color: #eef2ff;
+        }
+        .contact-info a { color: #bfdbfe; }
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 18px 0;
+            box-shadow: 0 10px 30px rgba(17,24,39,.05);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            margin: 12px 0 0;
+            list-style: none;
+        }
+        .pill-list li {
+            background: var(--soft);
+            color: #1e40af;
+            padding: 7px 10px;
+            border-radius: 999px;
+            font-size: .92rem;
+            margin: 0;
+        }
+        ul { margin-left: 20px; padding-left: 6px; }
+        li { margin-bottom: 8px; }
+        .project-card {
+            background: #f8fbff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+        }
+        .muted { color: var(--muted); }
+        footer {
+            margin-top: 34px;
+            padding: 20px 0;
+            text-align: center;
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
-    <h1>Dioscar Rodriguez</h1>
-    
-    <div class="contact-info">
-        <strong>Contact:</strong> 8322 Lakeshore Rd Cicero, NY 13039 | (347) 200-9415 | 
-        <a href="mailto:dioscarr@gmail.com">dioscarr@gmail.com</a> | 
-        <a href="https://github.com/dioscarr">GitHub Profile</a> | 
-        <a href="https://dioscarr.github.io/Landing/">Portfolio</a>
+    <header>
+        <h1>Dioscar Rodriguez</h1>
+        <p>AI Systems Architect-minded Software Engineer specializing in enterprise .NET modernization, Blazor, data architecture, and AI-assisted software delivery.</p>
+        <div class="contact-info">
+            Cicero, NY | <a href="mailto:dioscarr@gmail.com">dioscarr@gmail.com</a> |
+            <a href="https://github.com/dioscarr">GitHub</a> |
+            <a href="https://github.com/dioscarr/glucoplate-ai">GlucoPlate AI</a> |
+            <a href="https://dioscarr.github.io/Landing/">Portfolio</a>
+        </div>
+    </header>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>I am a software engineer with 10+ years of experience building and modernizing enterprise applications across .NET, C#, SQL Server, Blazor, JavaScript, and cloud-ready web architectures. My current focus is AI systems architecture: breaking complex software into clear requirements, technical contracts, agent workflows, service boundaries, and implementation tasks that human developers and AI coding assistants can execute safely and consistently.</p>
+        <p>I have led modernization work across legacy ASP.NET/VB.NET, Sybase, SQL Server, Entity Framework, Blazor, authentication/authorization, reporting, and user-facing workflows while collaborating directly with business stakeholders to preserve critical functionality and improve usability.</p>
     </div>
 
     <div class="section">
-        <h2>Summary/Objective</h2>
-        <p>A self-motivated and results-driven software engineer with 10+ years of experience delivering high-impact solutions. Proven ability to work autonomously in remote environments while collaborating effectively with distributed teams. Expert in leveraging AI tools to boost development efficiency by 40% and passionate about creating scalable applications that drive business value. Strong communicator with bilingual capabilities, seeking remote opportunities to contribute innovative solutions to forward-thinking organizations.</p>
+        <h2>Current Focus</h2>
+        <div class="grid">
+            <div class="project-card">
+                <h3>AI Systems Architecture</h3>
+                <p class="muted">Designing systems where AI agents, coding assistants, APIs, safety checks, and human review work together through clear contracts.</p>
+            </div>
+            <div class="project-card">
+                <h3>Enterprise Modernization</h3>
+                <p class="muted">Migrating legacy platforms into maintainable, secure, role-based, service-oriented .NET applications.</p>
+            </div>
+            <div class="project-card">
+                <h3>AI-Assisted Engineering</h3>
+                <p class="muted">Using GitHub Copilot, prompt design, architecture docs, and agentic workflows to accelerate development without losing engineering discipline.</p>
+            </div>
+        </div>
     </div>
 
     <div class="section">
-        <h2>Education</h2>
-        <p>New York City College of Technology, 2014, Bachelor's in Computer Information Systems.</p>
+        <h2>Featured Project</h2>
+        <div class="project-card">
+            <h3><a href="https://github.com/dioscarr/glucoplate-ai">GlucoPlate AI</a></h3>
+            <p>An AI-powered diabetes-conscious recipe and meal-planning platform built as a public AI systems architecture reference project.</p>
+            <ul>
+                <li>Python/FastAPI API design with layered services and Pydantic contracts.</li>
+                <li>Multi-agent recipe workflow using planner, recipe, nutrition, safety, and reviewer agents.</li>
+                <li>GitHub Copilot SDK integration with local fallback behavior.</li>
+                <li>Gemini/Nano Banana image-generation workflow isolated to recipe gallery images.</li>
+                <li>OpenStreetMap/Overpass store lookup and Open Food Facts product metadata integration.</li>
+                <li>Static web UI with recipe generation, map/store experience, clickable ingredients, and product lookup.</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
         <h2>Work Experience</h2>
-        
         <h3>Programmer | McNeil and Company | July 2020 to Present</h3>
         <ul>
-            <li>Specialized in prompt engineering for LLMs, improving code generation accuracy by 60% through strategic use of contextual information and documentation, resulting in faster delivery of concrete solutions for complex business problems.</li>
-            <li>Led collaborative development of 5+ scalable cloud-based applications serving 10,000+ users, working remotely with distributed teams across multiple time zones while maintaining 99.5% uptime and consistently delivering features ahead of schedule.</li>
-            <li>Increased development efficiency by 40% through strategic implementation of AI-powered tools (GitHub Copilot, OpenAI, Claude models), reducing debugging time and accelerating problem resolution for architectural challenges.</li>
-            <li>Optimized SQL query performance by 70% using AI-assisted analysis, reducing database response times from 5+ seconds to under 1.5 seconds for critical business operations.</li>
-            <li>Successfully migrated legacy Sybase Anywhere database (50GB+) to MSSQL with zero data loss, improving system reliability and reducing maintenance costs by 30%.</li>
-            <li>Enhanced application security by implementing Entity Framework data access patterns, eliminating 100% of SQL injection vulnerabilities identified during security audits.</li>
-            <li>Delivered React JS marketplace prototype 25% ahead of schedule using TypeScript, Sass, and MUI, demonstrating modern development practices and component reusability.</li>
-            <li>Streamlined development workflow by migrating VB.NET applications to .NET 5+ Blazor WASM, reducing codebase complexity by 40% and improving maintainability.</li>
+            <li>Contributed to the modernization of a mature enterprise Learning Management System from legacy ASP.NET/VB.NET and Sybase into a modern .NET, C#, SQL Server, Entity Framework, and Blazor-based platform.</li>
+            <li>Migrated database structures and business logic from Sybase/inline SQL into SQL Server, stored procedures, table-valued functions, repositories, and C# service/worker layers.</li>
+            <li>Designed role-scoped application capabilities for student, officer, and administrator profiles, including user management, assignments, documents, modules, history, certificates, reports, and organization-scoped workflows.</li>
+            <li>Integrated xAPI/Tin Can learning activity through an on-premises Veracity LRS, using internal APIs to transform learning statements into platform-specific progress, quiz, history, and certificate records.</li>
+            <li>Collaborated with Risk Management stakeholders to evaluate legacy workflows, preserve business-critical behavior, and modernize user experiences across key screens.</li>
+            <li>Applied AI-assisted development workflows using GitHub Copilot and LLM-based planning to accelerate implementation, debugging, refactoring, and architectural exploration.</li>
         </ul>
 
         <h3>Lead Software Engineer | Third Mind Inc | May 2016 to March 2020</h3>
         <ul>
-            <li>Led full-stack development initiatives across two industries, delivering 15+ feature releases that improved user engagement by 35% and reduced customer support tickets by 50%.</li>
-            <li>Modernized legacy systems by integrating ReactJS with existing frameworks, resulting in 60% faster page load times and enhanced user experience ratings.</li>
-            <li>Architected and delivered ASP.NET Core 3.1/React JS extranet application serving 5,000+ users, implementing secure authentication and real-time data synchronization.</li>
-            <li>Developed automated contract generation system using Open XML, reducing document processing time from 4 hours to 15 minutes per contract, saving 20+ hours weekly.</li>
-            <li>Enhanced school CRM system performance by 45% through strategic use of Entity Framework optimization and AngularJS component refactoring.</li>
+            <li>Led full-stack development initiatives across web applications, CRM systems, extranet platforms, and document automation workflows.</li>
+            <li>Architected and delivered ASP.NET Core and React-based applications with secure authentication, reusable components, and database-backed business workflows.</li>
+            <li>Developed automated contract generation using Open XML, reducing manual document preparation and improving consistency.</li>
+            <li>Modernized legacy user interfaces using React, AngularJS, JavaScript, and Entity Framework optimization patterns.</li>
         </ul>
 
         <h3>Full Stack Web Developer | Clever Design | October 2015 to May 2016</h3>
         <ul>
-            <li>Delivered 10+ responsive web applications using C#, ASP.NET, and Bootstrap, achieving 98% client satisfaction rate and generating $200K+ in revenue.</li>
-            <li>Built and deployed content management systems supporting 50+ websites, reducing content update time by 80% through intuitive rich editor implementations.</li>
-            <li>Implemented advanced search functionality serving 100,000+ monthly queries with sub-second response times using AJAX and optimized MSSQL indexing.</li>
-            <li>Strengthened application security by eliminating SQL injection and XSS vulnerabilities through comprehensive testing protocols, achieving zero security incidents post-deployment.</li>
+            <li>Built responsive web applications and CMS-backed sites using C#, ASP.NET, Bootstrap, JavaScript, and SQL Server.</li>
+            <li>Implemented content management, search, and client-facing web features with attention to usability and maintainability.</li>
         </ul>
 
         <h3>Web Developer | Pointer Security | July 2014 to October 2015</h3>
         <ul>
-            <li>Developed a web application using ASP.NET MVC5, C#, and Entity Framework. Planned and implemented server-side business logics.</li>
-            <li>Developed a one-page app using Knockout.js, jQuery, Ajax, and JSON.</li>
-            <li>Worked with live notification utilizing SignalR.</li>
-            <li>Responsible for MSSQL database design and implementation throughout the entire scope of application development.</li>
-            <li>Designed scalability and responsiveness through Bootstrap.</li>
-            <li>Responsible for planning the application's architecture and assisting in the overall application's design. Re-designed user interface using HTML, CSS, Bootstrap, and PHP on a WordPress platform.</li>
+            <li>Developed ASP.NET MVC5 applications using C#, Entity Framework, SQL Server, Knockout.js, jQuery, AJAX, JSON, Bootstrap, and SignalR.</li>
+            <li>Participated in application architecture, database design, responsive UI development, and real-time notification features.</li>
         </ul>
     </div>
 
     <div class="section">
         <h2>Skills</h2>
-        <ul>
-            <li><strong>Remote Work Excellence:</strong> Proven track record of autonomous work, self-directed project management, and effective communication in distributed teams across multiple time zones</li>
-            <li><strong>Bilingual Communication:</strong> Native Spanish fluency enabling seamless collaboration with diverse, international teams</li>
-            <li><strong>AI/Generative AI Tools:</strong> Advanced proficiency with Copilot (Visual Studio/VS Code), OpenAI Models, Claude Models, Power Automate - demonstrating ability to leverage cutting-edge technology for competitive advantage</li>
-            <li><strong>Front-End Expertise:</strong> ReactJS, jQuery, JavaScript, Node.js, HTML5, SCSS, CSS3, Bootstrap, Blazor Interactive Modes, Angular, Backbone.js - specializing in modern, responsive user interfaces</li>
-            <li><strong>Back-End/Frameworks:</strong> Entity Framework, .NET (.NET 5, .NET 6, .NET 8, .NET 9), ASP.NET, ASP.NET Core, Xamarin, MAUI, .NET Core, MVC, PHP, Ruby on Rails - focused on scalable, secure server-side solutions</li>
-            <li><strong>Database Optimization:</strong> SQL Server, MS SSMS, MySQL, Sybase Anywhere - expert in performance tuning and data architecture</li>
-            <li><strong>APIs/Integration:</strong> REST, SOAP, Web Services, APIs, AJAX, JSON - experienced in creating seamless system integrations</li>
-            <li><strong>Development Tools:</strong> Git, GitHub, Docker, TFS, Unit Testing, Integration Testing, TypeScript, XML, Open XML, SignalR - proficient in modern development workflows</li>
-            <li><strong>Core Languages:</strong> C#, JavaScript, PHP, SQL, VB.NET - versatile programming capabilities across multiple technology stacks</li>
+        <ul class="pill-list">
+            <li>AI Systems Architecture</li>
+            <li>GitHub Copilot</li>
+            <li>Prompt Engineering</li>
+            <li>Agentic Workflows</li>
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>C#</li>
+            <li>.NET</li>
+            <li>Blazor</li>
+            <li>ASP.NET Core</li>
+            <li>Entity Framework</li>
+            <li>SQL Server</li>
+            <li>Sybase Migration</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>REST APIs</li>
+            <li>SignalR</li>
+            <li>Docker</li>
+            <li>GitHub</li>
+            <li>System Design</li>
+            <li>Technical Documentation</li>
+            <li>Bilingual Spanish/English</li>
         </ul>
     </div>
 
-    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #bdc3c7; text-align: center; color: #7f8c8d;">
-        <p>This page is also available in markdown format at <a href="index.md">index.md</a></p>
+    <div class="section">
+        <h2>Education</h2>
+        <p>New York City College of Technology, 2014 — Bachelor's in Computer Information Systems.</p>
+    </div>
+
+    <footer>
+        <p>This page is also available in markdown format at <a href="index.md">index.md</a>.</p>
     </footer>
 </body>
 </html>
-
