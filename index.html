@@ -203,6 +203,18 @@
     body[data-theme="signal"] .topnav a:hover, body[data-theme="signal"] .theme-toggle:hover, body[data-theme="signal"] .theme-toggle[aria-expanded="true"] { color:var(--accent); }
     body[data-theme="terminal"] { --paper:#071311; --surface:#0d1d19; --ink:#e6f3df; --muted:#91aa98; --dim:#557361; --line:#1b3a30; --line-bright:#2a5948; --accent:#b7f34a; --accent-dim:#173527; --cyan:#57e3bd; --surface-hover:#12271f; --surface-alt:#10241d; --surface-warm:#17291e; --body-muted:#78917f; --contact:#040b09; }
 
+    /* ── Single-page screen deck ── */
+    html,body { width:100%; height:100%; overflow:hidden; }
+    .topbar { position:fixed; inset:0 0 auto; }
+    .screen-track { display:grid; grid-auto-flow:column; grid-auto-columns:100vw; width:max-content; height:100vh; transform:translate3d(0,0,0); transition:transform .68s cubic-bezier(.22,.8,.24,1); will-change:transform; }
+    .screen-track > section { width:100vw; height:100vh; padding:clamp(108px,13vh,140px) 0 clamp(48px,7vh,72px); overflow-x:hidden; overflow-y:auto; overscroll-behavior:contain; border:0; scrollbar-width:thin; scrollbar-color:var(--line-bright) transparent; }
+    .screen-track > section[aria-hidden="true"] { pointer-events:none; }
+    .screen-track > section:focus { outline:none; }
+    .topnav a[aria-current="page"] { color:var(--accent); }
+    .hero { position:relative; display:flex; align-items:center; padding-top:clamp(112px,14vh,148px); }
+    .hero .ticker { position:absolute; inset:auto 0 0; width:100vw; }
+    footer { display:none; }
+
     /* ── Reveal ── */
     [data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1); }
     [data-reveal].is-visible { opacity:1; transform:none; }
@@ -221,6 +233,8 @@
       .role { grid-template-columns:1fr; gap:8px; padding:24px 0; }
       .section { padding:64px 0; }
       .section-head { margin-bottom:36px; }
+      .screen-track > section { padding-top:104px; }
+      .hero { align-items:flex-start; }
     }
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
@@ -235,7 +249,7 @@
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="#top"><span class="brand-mark">DR</span>Dioscar Rodriguez</a>
+    <a class="brand" href="#home"><span class="brand-mark">DR</span>Dioscar Rodriguez</a>
     <nav class="topnav" aria-label="Primary navigation">
       <a href="#focus">Focus</a>
       <a href="#project">Project</a>
@@ -261,10 +275,10 @@
   </div>
 </aside>
 
-<main id="top">
+<main id="top" class="screen-track">
 
   <!-- ── Hero ── -->
-  <section class="hero">
+  <section id="home" class="hero" data-screen-title="Home">
     <div class="wrap hero-grid">
       <div class="hero-eyebrow">AI Systems Architect · Software Engineer · Cicero, NY</div>
       <h1>Building systems<br>that make <span class="it">complex</span><br>feel clear.</h1>
@@ -288,13 +302,11 @@
         </div>
       </div>
     </div>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>AI Systems Architecture<b>✳</b></span><span>Enterprise Modernization<b>✳</b></span><span>AI-Assisted Engineering<b>✳</b></span><span>.NET / Blazor<b>✳</b></span><span>Python / FastAPI<b>✳</b></span><span>AI Systems Architecture<b>✳</b></span><span>Enterprise Modernization<b>✳</b></span><span>AI-Assisted Engineering<b>✳</b></span><span>.NET / Blazor<b>✳</b></span><span>Python / FastAPI<b>✳</b></span></div></div>
   </section>
 
-  <!-- ── Ticker ── -->
-  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>AI Systems Architecture<b>✳</b></span><span>Enterprise Modernization<b>✳</b></span><span>AI-Assisted Engineering<b>✳</b></span><span>.NET / Blazor<b>✳</b></span><span>Python / FastAPI<b>✳</b></span><span>AI Systems Architecture<b>✳</b></span><span>Enterprise Modernization<b>✳</b></span><span>AI-Assisted Engineering<b>✳</b></span><span>.NET / Blazor<b>✳</b></span><span>Python / FastAPI<b>✳</b></span></div></div>
-
   <!-- ── Focus ── -->
-  <section id="focus">
+  <section id="focus" data-screen-title="Focus">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <div class="section-label">01 / What I build toward</div>
@@ -321,7 +333,7 @@
   </section>
 
   <!-- ── Project ── -->
-  <section id="project">
+  <section id="project" data-screen-title="Project">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <div class="section-label">02 / Featured project</div>
@@ -348,7 +360,7 @@
   </section>
 
   <!-- ── Experience ── -->
-  <section id="experience">
+  <section id="experience" data-screen-title="Work">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <div class="section-label">03 / The long view</div>
@@ -432,7 +444,7 @@
   </section>
 
   <!-- ── Skills ── -->
-  <section id="skills">
+  <section id="skills" data-screen-title="Skills">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <div class="section-label">04 / Tools I reach for</div>
@@ -466,7 +478,7 @@
   </section>
 
   <!-- ── Education ── -->
-  <section id="education">
+  <section id="education" data-screen-title="Education">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <div class="section-label">05 / Foundation</div>
@@ -484,7 +496,7 @@
   </section>
 
   <!-- ── Contact ── -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact" data-screen-title="Contact">
     <div class="wrap" data-reveal>
       <div class="section-label">06 / Open channel</div>
       <h2>Have a hard<br><span class="it">system?</span></h2>
@@ -589,6 +601,82 @@
     { threshold: 0.08 }
   );
   document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+  // Full-viewport screen navigation
+  const screenTrack = document.querySelector('.screen-track');
+  const screens = [...screenTrack.querySelectorAll(':scope > section')];
+  const screenLinks = [...document.querySelectorAll('a[href^="#"]')]
+    .filter(link => screens.some(screen => `#${screen.id}` === link.getAttribute('href')));
+  let activeScreen = Math.max(0, screens.findIndex(screen => `#${screen.id}` === window.location.hash));
+  let wheelLocked = false;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  function showScreen(target, options = {}) {
+    const index = typeof target === 'number' ? target : screens.indexOf(target);
+    if (index < 0 || index >= screens.length) return;
+    activeScreen = index;
+    screenTrack.style.transform = `translate3d(-${index * 100}vw,0,0)`;
+    screens.forEach((screen, screenIndex) => {
+      const isActive = screenIndex === index;
+      screen.setAttribute('aria-hidden', String(!isActive));
+      screen.inert = !isActive;
+      screen.classList.toggle('is-active', isActive);
+    });
+    screenLinks.forEach(link => {
+      const isCurrent = link.getAttribute('href') === `#${screens[index].id}`;
+      if (isCurrent) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    if (options.updateHash !== false) history.replaceState(null, '', `#${screens[index].id}`);
+    if (options.focus) {
+      screens[index].tabIndex = -1;
+      screens[index].focus({ preventScroll:true });
+    }
+  }
+
+  screenLinks.forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    showScreen(screens.find(screen => `#${screen.id}` === link.getAttribute('href')), { focus:true });
+  }));
+
+  document.addEventListener('keydown', event => {
+    if (!themePanel.hidden || /input|textarea|select/i.test(event.target.tagName)) return;
+    if (event.key === 'ArrowRight' || event.key === 'PageDown') showScreen(activeScreen + 1, { focus:true });
+    if (event.key === 'ArrowLeft' || event.key === 'PageUp') showScreen(activeScreen - 1, { focus:true });
+    if (event.key === 'Home') showScreen(0, { focus:true });
+    if (event.key === 'End') showScreen(screens.length - 1, { focus:true });
+  });
+
+  document.addEventListener('wheel', event => {
+    if (!themePanel.hidden || wheelLocked) return;
+    const screen = screens[activeScreen];
+    const atTop = screen.scrollTop <= 0;
+    const atBottom = Math.ceil(screen.scrollTop + screen.clientHeight) >= screen.scrollHeight;
+    const forward = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX > 0 : event.deltaY > 0;
+    if ((forward && !atBottom) || (!forward && !atTop)) return;
+    event.preventDefault();
+    showScreen(activeScreen + (forward ? 1 : -1));
+    wheelLocked = true;
+    window.setTimeout(() => { wheelLocked = false; }, 720);
+  }, { passive:false });
+
+  document.addEventListener('touchstart', event => {
+    touchStartX = event.changedTouches[0].clientX;
+    touchStartY = event.changedTouches[0].clientY;
+  }, { passive:true });
+  document.addEventListener('touchend', event => {
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
+    const deltaY = event.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) showScreen(activeScreen + (deltaX < 0 ? 1 : -1));
+  }, { passive:true });
+
+  window.addEventListener('hashchange', () => {
+    const target = screens.find(screen => `#${screen.id}` === window.location.hash);
+    if (target) showScreen(target, { updateHash:false });
+  });
+
+  showScreen(activeScreen, { updateHash:false });
 </script>
 
 </body>
