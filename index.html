@@ -1,218 +1,461 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dioscar Rodriguez - AI Systems Architect & Software Engineer</title>
-    <style>
-        :root {
-            --bg: #f6f8fb;
-            --card: #ffffff;
-            --text: #1f2937;
-            --muted: #5f6b7a;
-            --blue: #2563eb;
-            --dark: #111827;
-            --border: #dbe3ef;
-            --soft: #eef4ff;
-        }
-        * { box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 1040px;
-            margin: 0 auto;
-            padding: 24px;
-            line-height: 1.65;
-            color: var(--text);
-            background: var(--bg);
-        }
-        header {
-            background: linear-gradient(135deg, #111827, #1e3a8a);
-            color: white;
-            padding: 36px;
-            border-radius: 18px;
-            margin-bottom: 24px;
-        }
-        h1, h2, h3 { color: var(--dark); line-height: 1.25; }
-        header h1 { color: white; font-size: 2.35rem; margin: 0 0 8px; }
-        header p { margin: 0; color: #dbeafe; font-size: 1.08rem; }
-        h2 { border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-top: 0; }
-        h3 { margin-bottom: 6px; }
-        a { color: var(--blue); text-decoration: none; font-weight: 600; }
-        a:hover { text-decoration: underline; }
-        .contact-info {
-            background: rgba(255,255,255,.12);
-            padding: 14px 0 0;
-            margin-top: 18px;
-            color: #eef2ff;
-        }
-        .contact-info a { color: #bfdbfe; }
-        .section {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
-            margin: 18px 0;
-            box-shadow: 0 10px 30px rgba(17,24,39,.05);
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 14px;
-        }
-        .pill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding: 0;
-            margin: 12px 0 0;
-            list-style: none;
-        }
-        .pill-list li {
-            background: var(--soft);
-            color: #1e40af;
-            padding: 7px 10px;
-            border-radius: 999px;
-            font-size: .92rem;
-            margin: 0;
-        }
-        ul { margin-left: 20px; padding-left: 6px; }
-        li { margin-bottom: 8px; }
-        .project-card {
-            background: #f8fbff;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 16px;
-        }
-        .muted { color: var(--muted); }
-        footer {
-            margin-top: 34px;
-            padding: 20px 0;
-            text-align: center;
-            color: var(--muted);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dioscar Rodriguez — AI Systems Architect & Software Engineer. Enterprise .NET modernization, Blazor, data architecture, and AI-assisted software delivery.">
+  <title>Dioscar Rodriguez — AI Systems Architect & Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper:#0c0e0f;
+      --surface:#131618;
+      --ink:#f4f0e8;
+      --muted:#8b8d84;
+      --dim:#5a5c54;
+      --line:#2a2d2f;
+      --line-bright:#3a3d3f;
+      --accent:#ff5f1f;
+      --accent-dim:#1a2d3f;
+      --cyan:#5ce0d0;
+      --serif:Georgia,'Times New Roman',serif;
+      --sans:'Space Grotesk','Inter',Arial,sans-serif;
+      --body:'Inter','Space Grotesk',Arial,sans-serif;
+      --mono:'DM Mono',monospace;
+    }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { min-width:320px; color:var(--ink); background:var(--paper); font-family:var(--body); font-size:16px; line-height:1.6; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+
+    /* ── Layout ── */
+    .wrap { width:min(1200px,calc(100% - 56px)); margin:auto; }
+    section { padding:clamp(64px,9vw,128px) 0; border-bottom:1px solid var(--line); }
+
+    /* ── Top bar ── */
+    .topbar { position:sticky; top:0; z-index:100; background:rgba(12,14,15,.82); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+    .topbar-inner { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+    .brand { display:flex; align-items:center; gap:11px; font-family:var(--sans); font-weight:600; font-size:15px; letter-spacing:-.02em; }
+    .brand-mark { display:grid; place-items:center; width:32px; height:32px; border:1px solid var(--line-bright); border-radius:8px; background:var(--surface); font:500 12px var(--mono); color:var(--accent); }
+    .topnav { display:flex; gap:24px; font:500 13px var(--mono); letter-spacing:.04em; text-transform:uppercase; }
+    .topnav a { color:var(--muted); transition:color .2s; }
+    .topnav a:hover { color:var(--ink); }
+    .topnav a:last-child { color:var(--accent); }
+
+    /* ── Hero ── */
+    .hero { padding:clamp(80px,14vh,140px) 0 clamp(48px,6vw,72px); border-bottom:1px solid var(--line); }
+    .hero-grid { display:grid; grid-template-columns:1fr; gap:40px; }
+    .hero-eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font:500 .7rem/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+    .hero-eyebrow::before { content:''; display:block; width:28px; height:2px; background:currentColor; }
+    h1 { font-family:var(--sans); font-size:clamp(2.8rem,8vw,5.5rem); line-height:.92; letter-spacing:-.04em; font-weight:600; margin:18px 0 0; max-width:14ch; }
+    h1 .it { font-family:var(--serif); font-style:italic; font-weight:400; color:var(--accent); }
+    .hero-sub { max-width:540px; margin:28px 0 0; font-size:clamp(1.05rem,1.6vw,1.25rem); line-height:1.55; color:var(--muted); }
+    .hero-sub strong { color:var(--ink); font-weight:500; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:0; margin:44px 0 0; border-top:1px solid var(--line); }
+    .hero-meta-item { flex:1 1 200px; padding:22px 0; border-right:1px solid var(--line); }
+    .hero-meta-item:last-child { border-right:none; }
+    .hero-meta-item:first-child { padding-right:28px; }
+    .hero-meta-item + .hero-meta-item { padding-left:28px; }
+    .hero-meta-label { font:500 .65rem/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:8px; }
+    .hero-meta-value { font-size:1rem; font-weight:500; color:var(--ink); }
+    .hero-meta-value a:hover { color:var(--accent); }
+
+    /* ── Ticker ── */
+    .ticker { overflow:hidden; border-bottom:1px solid var(--line); background:var(--surface); }
+    .ticker-track { display:flex; width:max-content; padding:14px 0; animation:marquee 30s linear infinite; }
+    .ticker span { padding:0 24px; font:500 13px var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+    .ticker span b { color:var(--accent); font-weight:500; margin-left:6px; }
+    @keyframes marquee { to { transform:translateX(-50%); } }
+
+    /* ── Section heads ── */
+    .section-head { margin-bottom:56px; }
+    .section-label { display:flex; align-items:center; gap:10px; color:var(--accent); font:500 .7rem/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; }
+    .section-label::before { content:''; display:block; width:22px; height:2px; background:currentColor; }
+    .section-title { font-family:var(--sans); font-size:clamp(2rem,4.5vw,3.5rem); line-height:.96; letter-spacing:-.03em; font-weight:600; max-width:20ch; }
+    .section-title .sub { display:block; color:var(--muted); font-family:var(--serif); font-style:italic; font-weight:400; }
+
+    /* ── Focus grid ── */
+    .focus-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+    .focus-card { padding:32px 28px; background:var(--surface); display:flex; flex-direction:column; gap:18px; transition:background .3s; }
+    .focus-card:hover { background:#181a1c; }
+    .focus-card:nth-child(2) { background:#161a1e; }
+    .focus-card:nth-child(2):hover { background:#1c2228; }
+    .focus-card:nth-child(3) { background:#1e1714; }
+    .focus-card:nth-child(3):hover { background:#241c18; }
+    .focus-num { font:500 .65rem/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--dim); }
+    .focus-card h3 { font-family:var(--sans); font-size:1.4rem; line-height:1.15; letter-spacing:-.02em; font-weight:600; }
+    .focus-card p { font-size:.9rem; line-height:1.55; color:var(--muted); }
+
+    /* ── Project ── */
+    .project { display:grid; grid-template-columns:1fr 2fr; gap:clamp(32px,6vw,72px); align-items:start; }
+    .project-stamp { display:inline-grid; place-items:center; width:120px; height:120px; border:1px solid var(--line-bright); border-radius:20px; background:var(--surface); font:600 1.4rem/1 var(--sans); letter-spacing:-.02em; color:var(--accent); }
+    .project-copy h3 { font-family:var(--sans); font-size:clamp(2rem,5vw,3rem); line-height:.9; letter-spacing:-.03em; font-weight:600; margin-bottom:12px; }
+    .project-copy h3 a { transition:color .2s; }
+    .project-copy h3 a:hover { color:var(--accent); }
+    .project-copy > p { max-width:560px; font-size:1.1rem; line-height:1.5; color:var(--muted); margin:0 0 28px; }
+    .project-list { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:680px; border-top:1px solid var(--line); }
+    .project-list li { padding:14px 0; border-bottom:1px solid var(--line); font-size:.875rem; line-height:1.4; color:#6b6d65; display:flex; gap:10px; }
+    .project-list li::before { content:'→'; color:var(--accent); flex-shrink:0; }
+
+    /* ── Experience ── */
+    .experience { display:grid; grid-template-columns:1fr 2fr; gap:clamp(32px,6vw,72px); }
+    .experience-intro p { max-width:280px; color:var(--muted); line-height:1.55; font-size:.95rem; }
+    .experience-intro .stamp { margin-top:32px; font:500 .7rem/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--accent); }
+    .timeline { border-top:1px solid var(--line-bright); }
+    .role { display:grid; grid-template-columns:1fr 2fr; gap:30px; padding:28px 0; border-bottom:1px solid var(--line); }
+    .role-meta { }
+    .role-meta strong { display:block; font-size:1.05rem; font-weight:600; color:var(--ink); letter-spacing:-.01em; margin-bottom:4px; }
+    .role-meta .company { color:var(--muted); font-size:.875rem; }
+    .role-meta .dates { color:var(--dim); font:.75rem var(--mono); letter-spacing:.04em; margin-top:6px; }
+    .role-body h3 { font-family:var(--sans); font-size:1.1rem; font-weight:600; letter-spacing:-.01em; margin-bottom:10px; }
+    .role-body p { color:#6b6d65; line-height:1.6; font-size:.9rem; }
+    .role-body ul { list-style:none; margin-top:12px; }
+    .role-body ul li { padding:5px 0 5px 18px; position:relative; font-size:.875rem; line-height:1.5; color:#6b6d65; }
+    .role-body ul li::before { content:''; position:absolute; left:0; top:11px; width:8px; height:1px; background:var(--accent); }
+
+    /* ── Skills ── */
+    .skills { display:flex; flex-wrap:wrap; gap:8px; }
+    .skill { padding:10px 16px; border:1px solid var(--line-bright); border-radius:999px; background:var(--surface); font-size:.825rem; font-weight:500; color:var(--ink); transition:border-color .2s,color .2s,background .2s; }
+    .skill:hover { border-color:var(--accent); color:var(--accent); }
+    .skill:nth-child(3n) { background:var(--accent-dim); border-color:#1f3346; }
+    .skill:nth-child(3n):hover { border-color:var(--cyan); color:var(--cyan); }
+
+    /* ── Education ── */
+    .edu { display:grid; grid-template-columns:1fr 2fr; gap:clamp(32px,6vw,72px); align-items:start; }
+    .edu-detail { padding:28px 0; }
+    .edu-detail .school { font-size:1.1rem; font-weight:600; letter-spacing:-.01em; margin-bottom:4px; }
+    .edu-detail .degree { color:var(--muted); font-size:.95rem; }
+    .edu-detail .year { color:var(--dim); font:.75rem var(--mono); letter-spacing:.04em; margin-top:6px; }
+
+    /* ── Contact ── */
+    .contact { position:relative; overflow:hidden; padding:clamp(80px,12vw,140px) 0; background:#08090a; border-bottom:none; }
+    .contact .wrap { position:relative; z-index:1; }
+    .contact .section-label { color:var(--accent); }
+    .contact h2 { font-family:var(--sans); font-size:clamp(2.5rem,7vw,4.5rem); line-height:.9; letter-spacing:-.04em; font-weight:600; max-width:16ch; margin-bottom:48px; }
+    .contact h2 .it { font-family:var(--serif); font-style:italic; font-weight:400; color:var(--accent); }
+    .contact-links { display:flex; flex-wrap:wrap; gap:10px; }
+    .contact-link { display:inline-flex; align-items:center; gap:8px; min-height:48px; padding:12px 22px; border:1px solid var(--line-bright); border-radius:999px; font-size:.95rem; font-weight:500; transition:all .2s; }
+    .contact-link:hover { border-color:var(--accent); background:var(--accent); color:#0c0e0f; }
+    .contact-link svg { width:16px; height:16px; opacity:.7; }
+
+    /* ── Footer ── */
+    footer { padding:28px 0; border-top:1px solid var(--line); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; color:var(--dim); font-size:.75rem; }
+    .footer-inner a { color:var(--muted); transition:color .2s; }
+    .footer-inner a:hover { color:var(--accent); }
+    .footer-inner .mono { font:500 .7rem var(--mono); letter-spacing:.06em; text-transform:uppercase; }
+
+    /* ── Reveal ── */
+    [data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1); }
+    [data-reveal].is-visible { opacity:1; transform:none; }
+
+    /* ── Responsive ── */
+    @media (max-width:820px) {
+      .wrap { width:min(100% - 32px,680px); }
+      .topnav { gap:14px; font-size:11px; }
+      .topnav a:nth-child(1) { display:none; }
+      .hero-meta { flex-direction:column; }
+      .hero-meta-item { border-right:none; border-bottom:1px solid var(--line); padding:18px 0 !important; }
+      .hero-meta-item:last-child { border-bottom:none; }
+      .focus-grid { grid-template-columns:1fr; }
+      .project,.experience,.edu { grid-template-columns:1fr; gap:24px; }
+      .project-list { grid-template-columns:1fr; }
+      .role { grid-template-columns:1fr; gap:8px; padding:24px 0; }
+      .section { padding:64px 0; }
+      .section-head { margin-bottom:36px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+      [data-reveal] { opacity:1; transform:none; }
+      .ticker-track { animation:none; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Dioscar Rodriguez</h1>
-        <p>AI Systems Architect-minded Software Engineer specializing in enterprise .NET modernization, Blazor, data architecture, and AI-assisted software delivery.</p>
-        <div class="contact-info">
-            Cicero, NY | <a href="mailto:dioscarr@gmail.com">dioscarr@gmail.com</a> |
-            <a href="https://github.com/dioscarr">GitHub</a> |
-            <a href="https://github.com/dioscarr/glucoplate-ai">GlucoPlate AI</a> |
-            <a href="https://dioscarr.github.io/Landing/">Portfolio</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top"><span class="brand-mark">DR</span>Dioscar Rodriguez</a>
+    <nav class="topnav" aria-label="Primary navigation">
+      <a href="#focus">Focus</a>
+      <a href="#project">Project</a>
+      <a href="#experience">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="wrap hero-grid" data-reveal>
+      <div class="hero-eyebrow">AI Systems Architect · Software Engineer · Cicero, NY</div>
+      <h1>Building systems<br>that make <span class="it">complex</span><br>feel clear.</h1>
+      <p class="hero-sub">I modernize enterprise software and design the <strong>contracts, agent workflows, and guardrails</strong> that let teams and AI ship with confidence. 10+ years across .NET, Blazor, SQL Server, and AI-assisted delivery.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Current Role</div>
+          <div class="hero-meta-value">Programmer, McNeil & Company</div>
         </div>
-    </header>
-
-    <div class="section">
-        <h2>Professional Summary</h2>
-        <p>I am a software engineer with 10+ years of experience building and modernizing enterprise applications across .NET, C#, SQL Server, Blazor, JavaScript, and cloud-ready web architectures. My current focus is AI systems architecture: breaking complex software into clear requirements, technical contracts, agent workflows, service boundaries, and implementation tasks that human developers and AI coding assistants can execute safely and consistently.</p>
-        <p>I have led modernization work across legacy ASP.NET/VB.NET, Sybase, SQL Server, Entity Framework, Blazor, authentication/authorization, reporting, and user-facing workflows while collaborating directly with business stakeholders to preserve critical functionality and improve usability.</p>
-    </div>
-
-    <div class="section">
-        <h2>Current Focus</h2>
-        <div class="grid">
-            <div class="project-card">
-                <h3>AI Systems Architecture</h3>
-                <p class="muted">Designing systems where AI agents, coding assistants, APIs, safety checks, and human review work together through clear contracts.</p>
-            </div>
-            <div class="project-card">
-                <h3>Enterprise Modernization</h3>
-                <p class="muted">Migrating legacy platforms into maintainable, secure, role-based, service-oriented .NET applications.</p>
-            </div>
-            <div class="project-card">
-                <h3>AI-Assisted Engineering</h3>
-                <p class="muted">Using GitHub Copilot, prompt design, architecture docs, and agentic workflows to accelerate development without losing engineering discipline.</p>
-            </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Experience</div>
+          <div class="hero-meta-value">10+ years · 4 roles</div>
         </div>
-    </div>
-
-    <div class="section">
-        <h2>Featured Project</h2>
-        <div class="project-card">
-            <h3><a href="https://github.com/dioscarr/glucoplate-ai">GlucoPlate AI</a></h3>
-            <p>An AI-powered diabetes-conscious recipe and meal-planning platform built as a public AI systems architecture reference project.</p>
-            <ul>
-                <li>Python/FastAPI API design with layered services and Pydantic contracts.</li>
-                <li>Multi-agent recipe workflow using planner, recipe, nutrition, safety, and reviewer agents.</li>
-                <li>GitHub Copilot SDK integration with local fallback behavior.</li>
-                <li>Gemini/Nano Banana image-generation workflow isolated to recipe gallery images.</li>
-                <li>OpenStreetMap/Overpass store lookup and Open Food Facts product metadata integration.</li>
-                <li>Static web UI with recipe generation, map/store experience, clickable ingredients, and product lookup.</li>
-            </ul>
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Focus</div>
+          <div class="hero-meta-value">.NET · AI Systems · Blazor</div>
         </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-label">Links</div>
+          <div class="hero-meta-value"><a href="https://github.com/dioscarr" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://github.com/dioscarr/glucoplate-ai" target="_blank" rel="noreferrer">GlucoPlate AI</a></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="section">
-        <h2>Work Experience</h2>
-        <h3>Programmer | McNeil and Company | July 2020 to Present</h3>
-        <ul>
-            <li>Contributed to the modernization of a mature enterprise Learning Management System from legacy ASP.NET/VB.NET and Sybase into a modern .NET, C#, SQL Server, Entity Framework, and Blazor-based platform.</li>
-            <li>Migrated database structures and business logic from Sybase/inline SQL into SQL Server, stored procedures, table-valued functions, repositories, and C# service/worker layers.</li>
-            <li>Designed role-scoped application capabilities for student, officer, and administrator profiles, including user management, assignments, documents, modules, history, certificates, reports, and organization-scoped workflows.</li>
-            <li>Integrated xAPI/Tin Can learning activity through an on-premises Veracity LRS, using internal APIs to transform learning statements into platform-specific progress, quiz, history, and certificate records.</li>
-            <li>Collaborated with Risk Management stakeholders to evaluate legacy workflows, preserve business-critical behavior, and modernize user experiences across key screens.</li>
-            <li>Applied AI-assisted development workflows using GitHub Copilot and LLM-based planning to accelerate implementation, debugging, refactoring, and architectural exploration.</li>
-        </ul>
+  <!-- ── Ticker ── -->
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>AI Systems Architecture<b>✳</b></span><span>Enterprise Modernization<b>✳</b></span><span>AI-Assisted Engineering<b>✳</b></span><span>.NET / Blazor<b>✳</b></span><span>Python / FastAPI<b>✳</b></span><span>AI Systems Architecture<b>✳</b></span><span>Enterprise Modernization<b>✳</b></span><span>AI-Assisted Engineering<b>✳</b></span><span>.NET / Blazor<b>✳</b></span><span>Python / FastAPI<b>✳</b></span></div></div>
 
-        <h3>Lead Software Engineer | Third Mind Inc | May 2016 to March 2020</h3>
-        <ul>
-            <li>Led full-stack development initiatives across web applications, CRM systems, extranet platforms, and document automation workflows.</li>
-            <li>Architected and delivered ASP.NET Core and React-based applications with secure authentication, reusable components, and database-backed business workflows.</li>
-            <li>Developed automated contract generation using Open XML, reducing manual document preparation and improving consistency.</li>
-            <li>Modernized legacy user interfaces using React, AngularJS, JavaScript, and Entity Framework optimization patterns.</li>
-        </ul>
-
-        <h3>Full Stack Web Developer | Clever Design | October 2015 to May 2016</h3>
-        <ul>
-            <li>Built responsive web applications and CMS-backed sites using C#, ASP.NET, Bootstrap, JavaScript, and SQL Server.</li>
-            <li>Implemented content management, search, and client-facing web features with attention to usability and maintainability.</li>
-        </ul>
-
-        <h3>Web Developer | Pointer Security | July 2014 to October 2015</h3>
-        <ul>
-            <li>Developed ASP.NET MVC5 applications using C#, Entity Framework, SQL Server, Knockout.js, jQuery, AJAX, JSON, Bootstrap, and SignalR.</li>
-            <li>Participated in application architecture, database design, responsive UI development, and real-time notification features.</li>
-        </ul>
+  <!-- ── Focus ── -->
+  <section id="focus">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-label">01 / What I build toward</div>
+        <h2 class="section-title">Clear systems,<br><span class="sub">not magic.</span></h2>
+      </div>
+      <div class="focus-grid" data-reveal>
+        <article class="focus-card">
+          <div class="focus-num">01 — Architecture</div>
+          <h3>AI agents with guardrails.</h3>
+          <p>Designing systems where AI agents, coding assistants, APIs, safety checks, and human review work together through explicit contracts and service boundaries.</p>
+        </article>
+        <article class="focus-card">
+          <div class="focus-num">02 — Modernization</div>
+          <h3>Old code, new momentum.</h3>
+          <p>Migrating legacy platforms into maintainable, secure, role-based .NET applications — without losing the business logic that matters.</p>
+        </article>
+        <article class="focus-card">
+          <div class="focus-num">03 — Delivery</div>
+          <h3>Ship with a map.</h3>
+          <p>Requirements, architecture docs, prompts, and implementation slices that help teams move faster without losing engineering discipline.</p>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="section">
-        <h2>Skills</h2>
-        <ul class="pill-list">
-            <li>AI Systems Architecture</li>
-            <li>GitHub Copilot</li>
-            <li>Prompt Engineering</li>
-            <li>Agentic Workflows</li>
-            <li>Python</li>
-            <li>FastAPI</li>
-            <li>C#</li>
-            <li>.NET</li>
-            <li>Blazor</li>
-            <li>ASP.NET Core</li>
-            <li>Entity Framework</li>
-            <li>SQL Server</li>
-            <li>Sybase Migration</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>REST APIs</li>
-            <li>SignalR</li>
-            <li>Docker</li>
-            <li>GitHub</li>
-            <li>System Design</li>
-            <li>Technical Documentation</li>
-            <li>Bilingual Spanish/English</li>
-        </ul>
+  <!-- ── Project ── -->
+  <section id="project">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-label">02 / Featured project</div>
+        <h2 class="section-title">A healthier way<br><span class="sub">to use intelligence.</span></h2>
+      </div>
+      <div class="project" data-reveal>
+        <div>
+          <div class="project-stamp">GP<br>AI</div>
+        </div>
+        <div class="project-copy">
+          <h3><a href="https://github.com/dioscarr/glucoplate-ai" target="_blank" rel="noreferrer">GlucoPlate&nbsp;AI ↗</a></h3>
+          <p>An AI-powered diabetes-conscious recipe and meal-planning platform — built as a public reference for thoughtful AI systems architecture.</p>
+          <ul class="project-list">
+            <li>Python / FastAPI with layered services and Pydantic contracts</li>
+            <li>Planner, recipe, nutrition, safety, and reviewer agents</li>
+            <li>GitHub Copilot SDK with local fallback behavior</li>
+            <li>Gemini / Nano Banana image generation for gallery images</li>
+            <li>OpenStreetMap / Overpass store lookup + Open Food Facts</li>
+            <li>Static UI for recipes, maps, ingredients, and product lookup</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="section">
-        <h2>Education</h2>
-        <p>New York City College of Technology, 2014 — Bachelor's in Computer Information Systems.</p>
+  <!-- ── Experience ── -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-label">03 / The long view</div>
+        <h2 class="section-title">A decade of<br><span class="sub">useful change.</span></h2>
+      </div>
+      <div class="experience" data-reveal>
+        <div class="experience-intro">
+          <p>Enterprise work is a team sport. The best systems respect the people, rules, and history already inside the room.</p>
+          <div class="stamp">2014 → now</div>
+        </div>
+        <div class="timeline">
+
+          <article class="role">
+            <div class="role-meta">
+              <strong>Programmer</strong>
+              <div class="company">McNeil and Company</div>
+              <div class="dates">Jul 2020 — Present</div>
+            </div>
+            <div class="role-body">
+              <h3>Modernizing a mature learning platform.</h3>
+              <p>Moved legacy ASP.NET/VB.NET and Sybase foundations toward .NET, C#, SQL Server, Entity Framework, and Blazor — while collaborating with stakeholders to preserve critical business logic.</p>
+              <ul>
+                <li>Migrated database structures and business logic from Sybase / inline SQL into SQL Server stored procedures, table-valued functions, repositories, and C# service layers.</li>
+                <li>Designed role-scoped capabilities for student, officer, and administrator profiles — user management, assignments, documents, modules, history, certificates, and reports.</li>
+                <li>Integrated xAPI / Tin Can learning activity through an on-premises Veracity LRS, transforming learning statements into platform progress, quiz, history, and certificate records.</li>
+                <li>Applied AI-assisted workflows using GitHub Copilot and LLM-based planning to accelerate implementation, debugging, refactoring, and architectural exploration.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-meta">
+              <strong>Lead Software Engineer</strong>
+              <div class="company">Third Mind Inc</div>
+              <div class="dates">May 2016 — Mar 2020</div>
+            </div>
+            <div class="role-body">
+              <h3>Full-stack systems for real work.</h3>
+              <p>Led web, CRM, extranet, and document automation initiatives with ASP.NET Core, React, secure authentication, and reusable components.</p>
+              <ul>
+                <li>Architected and delivered ASP.NET Core / React applications with secure auth, reusable components, and database-backed business workflows.</li>
+                <li>Developed automated contract generation using Open XML, reducing manual document preparation and improving consistency.</li>
+                <li>Modernized legacy UIs with React, AngularJS, JavaScript, and Entity Framework optimization patterns.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-meta">
+              <strong>Full Stack Web Developer</strong>
+              <div class="company">Clever Design</div>
+              <div class="dates">Oct 2015 — May 2016</div>
+            </div>
+            <div class="role-body">
+              <h3>Built responsive client experiences.</h3>
+              <p>Built responsive web applications and CMS-backed sites with C#, ASP.NET, Bootstrap, JavaScript, and SQL Server.</p>
+              <ul>
+                <li>Implemented content management, search, and client-facing web features with attention to usability and maintainability.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-meta">
+              <strong>Web Developer</strong>
+              <div class="company">Pointer Security</div>
+              <div class="dates">Jul 2014 — Oct 2015</div>
+            </div>
+            <div class="role-body">
+              <h3>Learning the whole stack.</h3>
+              <p>Developed ASP.NET MVC5 applications with C#, Entity Framework, SQL Server, Knockout.js, jQuery, AJAX, JSON, Bootstrap, and SignalR.</p>
+              <ul>
+                <li>Participated in application architecture, database design, responsive UI development, and real-time notification features.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <p>This page is also available in markdown format at <a href="index.md">index.md</a>.</p>
-    </footer>
+  <!-- ── Skills ── -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-label">04 / Tools I reach for</div>
+        <h2 class="section-title">Range, with a<br><span class="sub">point of view.</span></h2>
+      </div>
+      <div class="skills" data-reveal>
+        <span class="skill">AI Systems Architecture</span>
+        <span class="skill">GitHub Copilot</span>
+        <span class="skill">Prompt Engineering</span>
+        <span class="skill">Agentic Workflows</span>
+        <span class="skill">C# / .NET</span>
+        <span class="skill">Blazor</span>
+        <span class="skill">ASP.NET Core</span>
+        <span class="skill">Python / FastAPI</span>
+        <span class="skill">React / TypeScript</span>
+        <span class="skill">Entity Framework</span>
+        <span class="skill">SQL Server</span>
+        <span class="skill">Sybase Migration</span>
+        <span class="skill">Stored Procedures</span>
+        <span class="skill">REST APIs</span>
+        <span class="skill">SignalR</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">System Design</span>
+        <span class="skill">Technical Documentation</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Git / GitHub</span>
+        <span class="skill">CI / CD</span>
+        <span class="skill">Bilingual Spanish / English</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Education ── -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-label">05 / Foundation</div>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="edu" data-reveal>
+        <div></div>
+        <div class="edu-detail">
+          <div class="school">New York City College of Technology</div>
+          <div class="degree">Bachelor's in Computer Information Systems</div>
+          <div class="year">2014</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact" class="contact">
+    <div class="wrap" data-reveal>
+      <div class="section-label">06 / Open channel</div>
+      <h2>Have a hard<br><span class="it">system?</span></h2>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:dioscarr@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          dioscarr@gmail.com
+        </a>
+        <a class="contact-link" href="https://github.com/dioscarr" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a class="contact-link" href="https://github.com/dioscarr/glucoplate-ai" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          GlucoPlate AI
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© Dioscar Rodriguez</span>
+    <span class="mono">Designed for systems that matter.</span>
+    <span><a href="index.md">View as markdown</a></span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
