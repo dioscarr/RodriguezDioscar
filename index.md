@@ -68,7 +68,7 @@ An AI-powered diabetes-conscious recipe and meal-planning platform built as a pu
 - **Front End:** Blazor, React, TypeScript, JavaScript, HTML, CSS, Bootstrap.
 - **Data:** SQL Server, Sybase migration, stored procedures, table-valued functions, query optimization, data modeling.
 - **Tools:** GitHub, Git, Docker, CI/CD practices, VS Code, Visual Studio.
-- **Communication:** Bilingual Spanish/English, stakeholder collaboration, architecture documentation.
+- **Communication:** Stakeholder collaboration, architecture documentation.
 
 ## Education
 

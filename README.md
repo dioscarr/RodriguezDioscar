@@ -25,7 +25,7 @@ The site is automatically deployed via GitHub Pages and should be accessible wit
 
 **Summary/Objective**
 
-A self-motivated and results-driven software engineer with 10+ years of experience delivering high-impact solutions. Proven ability to work autonomously in remote environments while collaborating effectively with distributed teams. Expert in leveraging AI tools to boost development efficiency by 40% and passionate about creating scalable applications that drive business value. Strong communicator with bilingual capabilities, seeking remote opportunities to contribute innovative solutions to forward-thinking organizations.
+A self-motivated and results-driven software engineer with 10+ years of experience delivering high-impact solutions. Proven ability to work autonomously in remote environments while collaborating effectively with distributed teams. Expert in leveraging AI tools to boost development efficiency by 40% and passionate about creating scalable applications that drive business value. Strong communicator seeking remote opportunities to contribute innovative solutions to forward-thinking organizations.
 
 **Education**
 
@@ -71,7 +71,6 @@ New York City College of Technology, 2014, Bachelor's in Computer Information Sy
 **Skills**
 
 *   **Remote Work Excellence:** Proven track record of autonomous work, self-directed project management, and effective communication in distributed teams across multiple time zones
-*   **Bilingual Communication:** Native Spanish fluency enabling seamless collaboration with diverse, international teams
 *   **AI/Generative AI Tools:** Advanced proficiency with Copilot (Visual Studio/VS Code), OpenAI Models, Claude Models, Power Automate - demonstrating ability to leverage cutting-edge technology for competitive advantage
 *   **Front-End Expertise:** ReactJS, jQuery, JavaScript, Node.js, HTML5, SCSS, CSS3, Bootstrap, Blazor Interactive Modes, Angular, Backbone.js - specializing in modern, responsive user interfaces
 *   **Back-End/Frameworks:** Entity Framework, .NET (.NET 5, .NET 6, .NET 8, .NET 9), ASP.NET, ASP.NET Core, Xamarin, MAUI, .NET Core, MVC, PHP, Ruby on Rails - focused on scalable, secure server-side solutions
