@@ -215,6 +215,15 @@
     .hero .ticker { position:absolute; inset:auto 0 0; width:100vw; }
     footer { display:none; }
 
+    .topnav .resume-download { color:var(--accent); white-space:nowrap; }
+    @media (max-width:640px) {
+      .topbar-inner { flex-wrap:wrap; gap:4px; padding:8px 0; }
+      .topnav { width:100%; gap:12px; justify-content:space-between; font-size:10px; }
+      .theme-toggle { padding:8px 4px; font-size:10px; }
+      .theme-panel { top:108px; }
+      .screen-track > section { padding-top:130px; }
+    }
+
     /* ── Reveal ── */
     [data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1); }
     [data-reveal].is-visible { opacity:1; transform:none; }
@@ -255,6 +264,7 @@
       <a href="#project">Project</a>
       <a href="#experience">Work</a>
       <a href="#contact">Contact</a>
+      <a class="resume-download" href="assets/Dioscar-Rodriguez-Resume.pdf" download="Dioscar-Rodriguez-Resume.pdf" type="application/pdf" aria-label="Download resume as PDF">Resume ↓</a>
       <button class="theme-toggle" type="button" aria-expanded="false" aria-controls="theme-panel"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/><path d="M16.5 3.5a8.5 8.5 0 0 1 0 17" opacity=".55"/></svg><span>Themes</span></button>
     </nav>
   </div>
@@ -345,7 +355,7 @@
         </div>
         <div class="project-copy">
           <h3><a href="https://github.com/dioscarr/glucoplate-ai" target="_blank" rel="noreferrer">GlucoPlate&nbsp;AI ↗</a></h3>
-          <p>An AI-powered diabetes-conscious recipe and meal-planning platform — built as a public reference for thoughtful AI systems architecture.</p>
+          <p>An AI-powered recipe companion for ingredient-based cooking, personalized recipes, and practical shopping workflows — built with structured APIs and provider fallbacks.</p>
           <ul class="project-list">
             <li>Python / FastAPI with layered services and Pydantic contracts</li>
             <li>Planner, recipe, nutrition, safety, and reviewer agents</li>
@@ -586,7 +596,7 @@
   document.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if (link.target === '_blank' || link.origin !== window.location.origin || link.hash || link.protocol === 'mailto:') return;
+    if (link.hasAttribute('download') || link.target === '_blank' || link.origin !== window.location.origin || link.hash || link.protocol === 'mailto:') return;
     document.body.classList.add('is-leaving');
   });
 
@@ -681,3 +691,4 @@
 
 </body>
 </html>
+
