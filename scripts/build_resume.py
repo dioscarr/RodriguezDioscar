@@ -79,7 +79,7 @@ para('<link href="mailto:dioscarr@gmail.com">dioscarr@gmail.com</link> | <link h
 c.setFont('Resume-Bold', 8.5); c.drawRightString(RIGHT, 746, "Bachelor's in Computer Information Systems")
 c.setFont('Resume', 8.5); c.drawRightString(RIGHT, 732, 'New York City College of Technology | 2014')
 section('Profile')
-para('Full-stack software engineer with 12+ years of experience building enterprise web applications, modernizing legacy systems, and delivering database-backed business workflows. Core strengths in C#, .NET, Blazor, React, and SQL Server, with hands-on work in role-based access, API integrations, and AI-assisted development. Bilingual in English and Spanish.')
+para('Full-stack software engineer with 12+ years of experience building enterprise web applications, modernizing legacy systems, and delivering database-backed business workflows. Core strengths in C#, .NET, Blazor, React, and SQL Server, with hands-on work in role-based access, API integrations, and AI-assisted development.')
 section('Professional experience')
 role('Programmer', 'McNeil and Company', 'Jul 2020 - Present')
 bullet('Modernize an enterprise e-learning platform serving approximately <b>108,000 users</b>, migrating ASP.NET WebForms / VB.NET functionality to <b>C#, .NET, and Blazor</b> while preserving business rules and learning records.')
@@ -120,7 +120,7 @@ rows = [
 ('<b>Backend & data</b>', 'C#, .NET, ASP.NET Core, Blazor, Entity Framework / EF Core, SQL Server, REST APIs, SignalR'),
 ('<b>Frontend</b>', 'React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, Bootstrap, WordPress / PHP'),
 ('<b>Delivery & security</b>', 'Git / GitHub, GitHub Actions, Docker / Podman, IIS, Auth0, role-based access, Serilog / Seq'),
-('<b>AI & languages</b>', 'Python, FastAPI, Pydantic, GitHub Copilot, AI-assisted development; English and Spanish'),
+('<b>AI development</b>', 'Python, FastAPI, Pydantic, GitHub Copilot, AI-assisted development'),
 ]
 height=122
 if y-height<49: raise ValueError(f'Skills panel overflows: {y}')
